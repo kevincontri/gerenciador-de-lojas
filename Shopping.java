@@ -1,5 +1,3 @@
-import java.text.Normalizer;
-
 public class Shopping {
   String nome;
   Endereco endereco;
