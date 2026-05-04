@@ -26,6 +26,9 @@ public class Principal {
       System.out.print("Digite o salário base dos funcionários: ");
       double salarioBase = scanner.nextDouble();
       scanner.nextLine(); // Limpa o buffer de entrada
+      System.out.print("Digite a capacidade do estoque: ");
+      int capacidadeEstoque = scanner.nextInt();
+      scanner.nextLine(); // Limpa o buffer de entrada
       System.out.print("\nDigite o endereço da loja:\nNome da rua: ");
       String nomeDaRua = scanner.nextLine();
       System.out.print("Cidade: ");
@@ -53,7 +56,7 @@ public class Principal {
 
       Data dataFundacao = new Data(diaFundacao, mesFundacao, anoFundacao);
 
-      Loja loja = new Loja(nomeLoja, quantidadeFuncionarios, salarioBase, endereco, dataFundacao);
+      Loja loja = new Loja(nomeLoja, quantidadeFuncionarios, salarioBase, endereco, dataFundacao, capacidadeEstoque);
 
       System.out.println(loja.toString());
     } else if (opcao == 2) {
