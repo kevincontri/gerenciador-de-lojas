@@ -13,6 +13,90 @@ public class Principal {
       opcao = scanner.nextInt();
       scanner.nextLine(); // Limpa o buffer de entrada
     } while (opcao != 1 && opcao != 2 && opcao != 3);
-    
+
+    if (opcao == 1) {
+      System.out.print("Digite o nome da loja: ");
+      String nomeLoja = scanner.nextLine();
+      System.out.print("Digite a quantidade de funcionários: ");
+      int quantidadeFuncionarios = scanner.nextInt();
+      scanner.nextLine(); // Limpa o buffer de entrada
+      System.out.print("Digite o salário base dos funcionários: ");
+      int salarioBase = scanner.nextInt();
+      scanner.nextLine(); // Limpa o buffer de entrada
+      System.out.print("\nDigite o endereço da loja:\nNome da rua: ");
+      String nomeDaRua = scanner.nextLine();
+      System.out.print("Cidade: ");
+      String cidade = scanner.nextLine();
+      System.out.print("Estado: ");
+      String estado = scanner.nextLine();
+      System.out.print("País: ");
+      String pais = scanner.nextLine();
+      System.out.print("CEP: ");
+      String cep = scanner.nextLine();
+      System.out.print("Número: ");
+      String numero = scanner.nextLine();
+      System.out.print("Complemento: ");
+      String complemento = scanner.nextLine();
+
+      System.out.print("\nDigite a data de fundação da loja:\nDia: ");
+      int diaFundacao = scanner.nextInt();
+      System.out.print("Mês: ");
+      int mesFundacao = scanner.nextInt();
+      System.out.print("Ano: ");
+      int anoFundacao = scanner.nextInt();
+      scanner.nextLine(); // Limpa o buffer de entrada
+
+      Endereco endereco = new Endereco(nomeDaRua, cidade, estado, pais, cep, numero, complemento);
+
+      Data dataFundacao = new Data(diaFundacao, mesFundacao, anoFundacao);
+
+      Loja loja = new Loja(nomeLoja, quantidadeFuncionarios, salarioBase, endereco, dataFundacao);
+
+      System.out.println(loja.toString());
+    } else if (opcao == 2) {
+      System.out.print("Digite o nome do produto: ");
+      String nomeProduto = scanner.nextLine();
+      System.out.print("Digite o preço do produto: ");
+      int precoProduto = scanner.nextInt();
+      scanner.nextLine(); // Limpa o buffer de entrada
+
+      System.out.print("Digite a data de validade do produto:\nDia: ");
+      int diaValidade = scanner.nextInt();
+      System.out.print("Mês: ");
+      int mesValidade = scanner.nextInt();
+      System.out.print("Ano: ");
+      int anoValidade = scanner.nextInt();
+      scanner.nextLine(); // Limpa o buffer de entrada
+
+      Data dataValidade = new Data(diaValidade, mesValidade, anoValidade);
+
+      Produto produto = new Produto(nomeProduto, precoProduto, dataValidade);
+
+      System.out.print("\nDigite a data atual:\nDia: ");
+      int diaAtual = scanner.nextInt();
+      System.out.print("Mês: ");
+      int mesAtual = scanner.nextInt();
+      System.out.print("Ano: ");
+      int anoAtual = scanner.nextInt();
+      scanner.nextLine(); // Limpa o buffer de entrada
+
+      Data dataAtual = new Data(diaAtual, mesAtual, anoAtual);
+
+      verificarValidade(produto, dataAtual);
+
+      System.out.println("\n" + produto.toString());
+    } else if (opcao == 3) {
+      System.out.println("Encerrando o programa. Obrigado por usar!");
+    }
+
+    scanner.close();
+  }
+
+  public static void verificarValidade(Produto produto, Data dataAtual) {
+    if (produto.estaVencido(dataAtual)) {
+      System.out.println("PRODUTO VENCIDO");
+    } else {
+      System.out.println("PRODUTO NÃO VENCIDO");
+    }
   }
 }

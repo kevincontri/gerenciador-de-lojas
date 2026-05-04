@@ -4,7 +4,7 @@ public class Data {
   private int ano;
 
   public Data(int dia, int mes, int ano) {
-    if (validarData()) {
+    if (validarData(dia, mes, ano)) {
       this.dia = dia;
       this.mes = mes;
       this.ano = ano;
@@ -12,21 +12,23 @@ public class Data {
       this.dia = 1;
       this.mes = 1;
       this.ano = 2000; // Data padrão
-      throw new IllegalArgumentException("Data inválida: " + dia + "/" + mes + "/" + ano);
+      System.out.println("Data inválida: " + dia + "/" + mes + "/" + ano + ". Data definida como 01/01/2000.");
     }
   }
 
-  public boolean validarData() {
+  public boolean validarData(int dia, int mes, int ano) {
     if (mes == 2) { // Fevereiro
       if (verificaAnoBissexto()) {
-        return dia <= 29; // Ano bissexto tem 29 dias em fevereiro
+        return (dia <= 29); // Ano bissexto tem 29 dias em fevereiro
       } else {
-        return dia <= 28; // Ano não bissexto tem 28 dias em fevereiro
+        return (dia <= 28); // Ano não bissexto tem 28 dias em fevereiro
       }
+    } else if (mes < 1 || mes > 12 || dia < 1) {
+      return (false); // Mês ou dia inválido
     } else if (mes == 4 || mes == 6 || mes == 9 || mes == 11) { // Meses com 30 dias
-      return dia <= 30;
+      return (dia <= 30);
     } else { // Meses com 31 dias
-      return dia <= 31;
+      return (dia <= 31);
     }
   }
 

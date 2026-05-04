@@ -1,11 +1,11 @@
 public class Loja {
   private String nome;
   private int quantidadeFuncionarios;
-  private double salarioBaseFuncionario;
+  private int salarioBaseFuncionario;
   private Endereco endereco;
   private Data dataFundacao;
 
-  public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco,
+  public Loja(String nome, int quantidadeFuncionarios, int salarioBaseFuncionario, Endereco endereco,
       Data dataFundacao) {
     this.nome = nome;
     this.quantidadeFuncionarios = quantidadeFuncionarios;
@@ -14,10 +14,12 @@ public class Loja {
     this.dataFundacao = dataFundacao;
   }
 
-  public Loja(String nome, int quantidadeFuncionarios) {
+  public Loja(String nome, int quantidadeFuncionarios, Endereco endereco, Data dataFundacao) {
     this.nome = nome;
     this.quantidadeFuncionarios = quantidadeFuncionarios;
-    this.salarioBaseFuncionario = -1.0; // Valor padrão
+    this.endereco = endereco;
+    this.dataFundacao = dataFundacao;
+    this.salarioBaseFuncionario = -1; // Valor padrão
   }
 
   public String getNome() {
@@ -28,7 +30,7 @@ public class Loja {
     return quantidadeFuncionarios;
   }
 
-  public double getSalarioBaseFuncionario() {
+  public int getSalarioBaseFuncionario() {
     return salarioBaseFuncionario;
   }
 
@@ -48,7 +50,7 @@ public class Loja {
     this.quantidadeFuncionarios = quantidadeFuncionarios;
   }
 
-  public void setSalarioBaseFuncionario(double salarioBaseFuncionario) {
+  public void setSalarioBaseFuncionario(int salarioBaseFuncionario) {
     this.salarioBaseFuncionario = salarioBaseFuncionario;
   }
 
@@ -67,9 +69,9 @@ public class Loja {
         + "\nData de Fundação: " + dataFundacao;
   }
 
-  public double gastosComSalario() {
-    if (this.salarioBaseFuncionario < 0 || this.salarioBaseFuncionario == -1.0) {
-      return -1.0; // Indica que o salário base não foi definido
+  public int gastosComSalario() {
+    if (this.salarioBaseFuncionario < 0 || this.salarioBaseFuncionario == -1) {
+      return -1; // Indica que o salário base não foi definido
     } else {
       return this.quantidadeFuncionarios * this.salarioBaseFuncionario;
     }

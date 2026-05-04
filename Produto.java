@@ -1,9 +1,9 @@
 public class Produto {
   private String nome;
-  private double preco;
+  private int preco;
   private Data dataValidade;
 
-  public Produto(String nome, double preco, Data dataValidade) {
+  public Produto(String nome, int preco, Data dataValidade) {
     this.nome = nome;
     this.preco = preco;
     this.dataValidade = dataValidade;
@@ -13,7 +13,7 @@ public class Produto {
     return nome;
   }
 
-  public double getPreco() {
+  public int getPreco() {
     return preco;
   }
 
@@ -25,7 +25,7 @@ public class Produto {
     this.nome = nome;
   }
 
-  public void setPreco(double preco) {
+  public void setPreco(int preco) {
     this.preco = preco;
   }
 
@@ -43,7 +43,7 @@ public class Produto {
         return dataValidade.getDia() < dataAtual.getDia(); // Vencido se o dia de validade for menor que o dia atual
       }
     }
-    return false; // Produto não vencidos
+    return false; // Produto não vencido
   }
 
   @Override
