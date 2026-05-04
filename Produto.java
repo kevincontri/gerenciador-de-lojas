@@ -1,9 +1,9 @@
 public class Produto {
   private String nome;
-  private int preco;
+  private double preco;
   private Data dataValidade;
 
-  public Produto(String nome, int preco, Data dataValidade) {
+  public Produto(String nome, double preco, Data dataValidade) {
     this.nome = nome;
     this.preco = preco;
     this.dataValidade = dataValidade;
@@ -13,7 +13,7 @@ public class Produto {
     return nome;
   }
 
-  public int getPreco() {
+  public double getPreco() {
     return preco;
   }
 
@@ -25,7 +25,7 @@ public class Produto {
     this.nome = nome;
   }
 
-  public void setPreco(int preco) {
+  public void setPreco(double preco) {
     this.preco = preco;
   }
 

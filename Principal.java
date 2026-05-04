@@ -1,8 +1,11 @@
 import java.util.Scanner;
+import java.util.Locale;
 
 public class Principal {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
+    scanner.useLocale(Locale.US); // Configura o Scanner para usar o formato de número dos EUA (ponto como
+                                  // separador decimal)
     int opcao = 1;
 
     do {
@@ -21,7 +24,7 @@ public class Principal {
       int quantidadeFuncionarios = scanner.nextInt();
       scanner.nextLine(); // Limpa o buffer de entrada
       System.out.print("Digite o salário base dos funcionários: ");
-      int salarioBase = scanner.nextInt();
+      double salarioBase = scanner.nextDouble();
       scanner.nextLine(); // Limpa o buffer de entrada
       System.out.print("\nDigite o endereço da loja:\nNome da rua: ");
       String nomeDaRua = scanner.nextLine();
@@ -57,7 +60,7 @@ public class Principal {
       System.out.print("Digite o nome do produto: ");
       String nomeProduto = scanner.nextLine();
       System.out.print("Digite o preço do produto: ");
-      int precoProduto = scanner.nextInt();
+      double precoProduto = scanner.nextDouble();
       scanner.nextLine(); // Limpa o buffer de entrada
 
       System.out.print("Digite a data de validade do produto:\nDia: ");
