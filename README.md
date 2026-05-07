@@ -41,6 +41,3 @@ javac app/utilities/Data.java app/utilities/Endereco.java app/main/Produto.java 
 ```bash
 java Principal
 ```
-
-## Demo
-
