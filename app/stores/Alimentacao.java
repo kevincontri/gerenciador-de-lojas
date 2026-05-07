@@ -1,4 +1,10 @@
-class Alimentacao extends Loja {
+package app.stores;
+
+import app.main.Loja;
+import app.utilities.Data;
+import app.utilities.Endereco;
+
+public class Alimentacao extends Loja {
   Data dataAlvara;
 
   public Alimentacao(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco,

@@ -1,4 +1,11 @@
+
 import java.util.Scanner;
+
+import app.main.Loja;
+import app.main.Produto;
+import app.utilities.Data;
+import app.utilities.Endereco;
+
 import java.util.Locale;
 
 public class Principal {

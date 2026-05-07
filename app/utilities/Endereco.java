@@ -1,3 +1,4 @@
+package app.utilities;
 public class Endereco {
   private String nomeDaRua;
   private String cidade;

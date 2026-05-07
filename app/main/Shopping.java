@@ -1,3 +1,8 @@
+package app.main;
+
+import app.stores.Informatica;
+import app.utilities.Endereco;
+
 public class Shopping {
   String nome;
   Endereco endereco;

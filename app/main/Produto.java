@@ -1,3 +1,7 @@
+package app.main;
+
+import app.utilities.Data;
+
 public class Produto {
   private String nome;
   private double preco;

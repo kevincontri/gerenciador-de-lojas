@@ -1,3 +1,8 @@
+package app.main;
+
+import app.utilities.Data;
+import app.utilities.Endereco;
+
 public class Loja {
   private String nome;
   private int quantidadeFuncionarios;

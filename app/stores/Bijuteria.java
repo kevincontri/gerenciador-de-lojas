@@ -1,4 +1,10 @@
-class Bijuteria extends Loja {
+package app.stores;
+
+import app.main.Loja;
+import app.utilities.Data;
+import app.utilities.Endereco;
+
+public class Bijuteria extends Loja {
   double metaVendas;
 
   public Bijuteria(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco,

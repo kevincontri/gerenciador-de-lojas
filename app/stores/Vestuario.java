@@ -1,4 +1,10 @@
-class Vestuario extends Loja {
+package app.stores;
+
+import app.main.Loja;
+import app.utilities.Data;
+import app.utilities.Endereco;
+
+public class Vestuario extends Loja {
   boolean produtosImportados;
 
   public Vestuario(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco,

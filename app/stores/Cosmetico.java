@@ -1,4 +1,10 @@
-class Cosmetico extends Loja {
+package app.stores;
+
+import app.main.Loja;
+import app.utilities.Data;
+import app.utilities.Endereco;
+
+public class Cosmetico extends Loja {
   double taxaComercializacao;
 
   public Cosmetico(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco,
