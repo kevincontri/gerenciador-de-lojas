@@ -4,8 +4,7 @@ import java.util.Locale;
 public class Principal {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
-    scanner.useLocale(Locale.US); // Configura o Scanner para usar o formato de número dos EUA (ponto como
-                                  // separador decimal)
+    scanner.useLocale(Locale.US); // Configura o Scanner para usar o formato de número dos EUA 
     int opcao = 1;
 
     do {
